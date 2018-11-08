@@ -22,24 +22,24 @@ header("Content-Type: text/html; charset=UTF-8");
     new daum.Postcode({
 
         oncomplete: function(data) {
+            window.TestApp.setAddress(data.bname, data.sigungu);
+//             if(data.userSelectedType=="R"){
 
-            if(data.userSelectedType=="R"){
+//                 // userSelectedType : 검색 결과에서 사용자가 선택한 주소의 타입
 
-                // userSelectedType : 검색 결과에서 사용자가 선택한 주소의 타입
+//                 // return type : R - roadAddress, J : jibunAddress
 
-                // return type : R - roadAddress, J : jibunAddress
+//                 // TestApp 은 안드로이드에서 등록한 이름
 
-                // TestApp 은 안드로이드에서 등록한 이름
+//                 window.TestApp.setAddress(data.bname, data.sigungu);
 
-                window.TestApp.setAddress(data.zonecode, data.roadAddress, data.buildingName);
+//             }
 
-            }
+//             else{
 
-            else{
+//                 window.TestApp.setAddress(data.zonecode, data.jibunAddress, data.buildingName);
 
-                window.TestApp.setAddress(data.zonecode, data.jibunAddress, data.buildingName);
-
-            }       
+//             }       
 
         }
 
