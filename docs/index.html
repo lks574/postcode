@@ -80,7 +80,8 @@
             addr : fullRoadAddr
         };
         
-        window.postMessageToiOS(postData);
+        // window.postMessageToiOS(postData);
+        window.postMessage(JSON.stringify({ a: "hello from web" }), '*')
       },
       width : '100%',
       height : '100%'
