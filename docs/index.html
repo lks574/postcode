@@ -80,7 +80,7 @@
             addr : fullRoadAddr
         };
         
-        window.postMessage(postData);
+        window.postMessage(JSON.stringify(postData));
 //         window.postMessage(JSON.stringify({ a: "hello from web" }), '*')
       },
       width : '100%',
