@@ -78,11 +78,9 @@
             zonecode : data.zonecode,
             addr : fullRoadAddr
         };
-        // IOS관련
 	window.postMessageToiOS(postData);      
-	      
-	// 안드로이드의 경우 -> window.(이름) 부분과 자바코드의 addJavascriptInterface의 뒤의 이름(WebviewManager)이 동일해야된다.
         window.Android.getPostMessage(JSON.stringify(postData));
+	    
       },
       width : '100%',
       height : '100%'
