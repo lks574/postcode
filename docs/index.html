@@ -31,6 +31,7 @@
   
   function postMessageToiOS(postData) {
       window.webkit.messageHandlers.callBackHandler.postMessage(postData);
+      console.log("postMessageToiOS "+postData);
   };
   
   var element_layer = document.getElementById('layer');
