@@ -80,6 +80,7 @@
             addr : fullRoadAddr
         };
         
+	// 안드로이드의 경우 -> window.(이름) 부분과 자바코드의 addJavascriptInterface의 뒤의 이름(WebviewManager)이 동일해야된다.
         window.Android.getPostMessage(JSON.stringify(postData));
 //         window.postMessage(JSON.stringify({ a: "hello from web" }), '*')
       },
