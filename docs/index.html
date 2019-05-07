@@ -9,9 +9,8 @@
 </div>
 
 <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
-
 <script>
-
+  
   window.addEventListener("message", onReceivedPostMessage, false);
   
   function onReceivedPostMessage(event){
@@ -31,7 +30,6 @@
   
   function postMessageToiOS(postData) {
       window.webkit.messageHandlers.callBackHandler.postMessage(postData);
-      console.log("postMessageToiOS "+postData);
   };
   
   var element_layer = document.getElementById('layer');
@@ -74,23 +72,17 @@
         if(fullRoadAddr !== ''){
           fullRoadAddr += extraRoadAddr;
         }
-	      
-	it (fullRoadAddr !== ''){
-		fullRoadAddr = data.sido
-	}
         
         var postData = {
             postcode : data.postcode,
             zonecode : data.zonecode,
-            addr : fullRoadAddr	
+            addr : fullRoadAddr
         };
-        
-	// IOS관련
+        // IOS관련
 	window.postMessageToiOS(postData);      
 	      
 	// 안드로이드의 경우 -> window.(이름) 부분과 자바코드의 addJavascriptInterface의 뒤의 이름(WebviewManager)이 동일해야된다.
         window.Android.getPostMessage(JSON.stringify(postData));
-//         window.postMessage(JSON.stringify({ a: "hello from web" }), '*')
       },
       width : '100%',
       height : '100%'
@@ -109,18 +101,8 @@
     element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
     element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
   };
-	
-// 	function sendData(data) {
-// 	window.postMessage(data, '*');
-// 	}
-//   window.onload = function () {
-	  
-// 	    document.getElementById('button').onclick = function () {
-// 	      sendData(document.getElementById('dd').value);
-// 	    }
-// 	  }
-  
 </script>
+	
 </body>
 </html>
 
