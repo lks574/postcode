@@ -12,7 +12,7 @@
 
 <script>
 
-     window.addEventListener("message", onReceivedPostMessage, false);
+  window.addEventListener("message", onReceivedPostMessage, false);
   
   function onReceivedPostMessage(event){
     //..ex deconstruct event into action & params
@@ -82,9 +82,7 @@
         var postData = {
             postcode : data.postcode,
             zonecode : data.zonecode,
-            addr : fullRoadAddr
-// 	    addr : data.sido + ', ' + data.bname
-		
+            addr : fullRoadAddr	
         };
         
 	// IOS관련
