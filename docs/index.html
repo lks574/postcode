@@ -78,9 +78,14 @@
             zonecode : data.zonecode,
             addr : fullRoadAddr
         };
-	window.postMessageToiOS(postData);      
-        window.Android.getPostMessage(JSON.stringify(postData));
-	    
+	      
+      	var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+	if (varUA.match('android') != null) { 
+	    window.Android.getPostMessage(JSON.stringify(postData));
+	} else if (varUA.indexOf("iphone")>-1||varUA.indexOf("ipad")>-1||varUA.indexOf("ipod")>-1) { 
+	    window.postMessageToiOS(postData);
+	} else {
+	}
       },
       width : '100%',
       height : '100%'
